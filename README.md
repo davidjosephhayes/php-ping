@@ -14,7 +14,7 @@ Copy config.sample.php to config.php. Change variables as necessary.
 
 ## Run
 
-Install a cron tab. For example, I want to run it twice an hour. The php comman can be replaces by the output of which php (something like `/usr/bin/php`).
+Install a cron tab. For example, I want to run it twice an hour. The php command can be replaced by the output of `which php` (something like `/usr/bin/php`).
 
 ```
 0,30 * * * * php path/to/phpPing.php
