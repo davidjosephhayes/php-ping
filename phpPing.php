@@ -10,12 +10,12 @@ $config = new phpPingConfig;
 for ($i=1; $i<count($_SERVER['argv']); $i++) $config->targets[] = $_SERVER['argv'][$i];
 if (empty($config->targets)) die('no targets specified');
 
-$factory = new Clue\React\Icmp\Factory();
-$icmp = $factory->createIcmp4();
-
 $statuses = array();
 
 foreach ($config->targets as $target) {
+	
+	$factory = new Clue\React\Icmp\Factory();
+	$icmp = $factory->createIcmp4();
 	
 	if ($config->debug) echo 'Pinging "' . $target . '"...' . PHP_EOL;
 	
@@ -25,7 +25,7 @@ foreach ($config->targets as $target) {
 		if ($config->debug) echo $msg  . PHP_EOL;
 		
 		$statuses[$target] = array(
-			'success' => false,
+			'success' => true,
 			'msg' => $msg,
 		);
 		
@@ -43,7 +43,21 @@ foreach ($config->targets as $target) {
 		
 		if (count($config->targets)!=count($statuses)) return;
 		
+		$body = '';
+		$foundSuccess = 0;
+		$foundFailure = 0;
+		foreach ($statuses as $status) {
+			if ($status['success']) $foundSuccess++;
+			if (!$status['success']) $foundFailure++;
+			$body .= $target.': '.$status['msg']."\n";
+		}
+		if ((!$foundSuccess || empty($config->successEmails)) && (!$foundFailure || empty($config->failureEmails))) {
+			if ($config->debug) echo 'No mail to send' . PHP_EOL;
+			return;
+		}
+		
 		$mail = new PHPMailer;
+		//~ $mail->isHTML(true); 
 		if ($config->debug) $mail->SMTPDebug = 3;
 		
 		if ($config->mailer=='smtp') {
@@ -62,21 +76,36 @@ foreach ($config->targets as $target) {
 		$fromName = empty($config->fromName) ? $fromEmail : $config->fromName;
 		$mail->setFrom($fromEmail, $fromName);
 		
-		$mail->addAddress('blackbricksoftware@gmail.com', 'Black Brick Software');
+		$mail->Body = $body;
+			
+		if ($foundSuccess>0 && !empty($config->successEmails)) { 
+			foreach ($config->successEmails as $email) $mail->addAddress($email);
+		}
 		
-		$mail->Subject = 'Server Statuses';
-		$mail->Body    = print_r($statuses,true);
-	
-		if(!$mail->send()) {
-			if ($config->debug) echo 'Message could not be sent.';
-			if ($config->debug) echo 'Mailer Error: ' . $mail->ErrorInfo;
+		if ($foundFailure>0 && !empty($config->failureEmails)) { 
+			foreach ($config->failureEmails as $email) $mail->addAddress($email);
+		}		
+		
+		if ($foundFailure>0) {
+			$mail->Subject = 'Server up status: (failure)';
 		} else {
-			if ($config->debug) echo 'Message has been sent';
+			$mail->Subject = 'Server up status: (success)';
+		}
+		
+		//~ $mail->AltBody = nl2br(;
+	
+		if ($config->debug) echo '--- sending mail ---' . PHP_EOL;
+		if(!$mail->send()) {
+			if ($config->debug) echo 'Message could not be sent.' . PHP_EOL;
+			if ($config->debug) echo 'Mailer Error: ' . $mail->ErrorInfo . PHP_EOL;
+		} else {
+			if ($config->debug) echo 'Message has been sent' . PHP_EOL;
 		}
 	});
+	
+	$factory->getLoop()->run();
 }
 
-$factory->getLoop()->run();
 
 
 
