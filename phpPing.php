@@ -21,7 +21,7 @@ foreach ($config->targets as $target) {
 	
 	$icmp->ping($target, $config->timeout)->then(function ($time) use ($icmp, $config, $target, &$statuses) {
 		
-		$msg = 'Success ('.$target.'): ' . round($time, 3) . 's';
+		$msg = 'Success: ' . round($time, 3) . 's';
 		if ($config->debug) echo $msg  . PHP_EOL;
 		
 		$statuses[$target] = array(
@@ -31,7 +31,7 @@ foreach ($config->targets as $target) {
 		
 	}, function (Exception $error) use($config, $target, &$statuses) {
 			
-		$msg = 'Error  ('.$target.'): ' . $error->getMessage();
+		$msg = 'Error: ' . $error->getMessage();
 		if ($config->debug) echo $msg . PHP_EOL;
 		
 		$statuses[$target] = array(
@@ -46,7 +46,7 @@ foreach ($config->targets as $target) {
 		$body = '';
 		$foundSuccess = 0;
 		$foundFailure = 0;
-		foreach ($statuses as $status) {
+		foreach ($statuses as $target =>  $status) {
 			if ($status['success']) $foundSuccess++;
 			if (!$status['success']) $foundFailure++;
 			$body .= $target.': '.$status['msg']."\n";
