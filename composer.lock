@@ -1,11 +1,280 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f26b71d09fb75f8e14f76c77a9511e83",
+    "hash": "1c54ed04c857bb75556f29c1d83aa50c",
+    "content-hash": "06e550c12b348c7f58bfe52f7f1f1805",
     "packages": [
+        {
+            "name": "clue/datagram",
+            "version": "v0.4.1",
+            "source": {
+                "type": "git",
+                "url": "git@github.com:clue/php-datagram.git",
+                "reference": "2319c348344e534562cb6c521d5fb3f7518d7563"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-datagram/zipball/2319c348344e534562cb6c521d5fb3f7518d7563",
+                "reference": "2319c348344e534562cb6c521d5fb3f7518d7563",
+                "shasum": ""
+            },
+            "require": {
+                "react/dns": ">=0.2, <0.4",
+                "react/event-loop": ">=0.2, <0.4",
+                "react/promise": "1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Datagram": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "UDP datagram socket client and server for reactphp",
+            "homepage": "https://github.com/clue/datagram",
+            "keywords": [
+                "Socket",
+                "async",
+                "client",
+                "datagram",
+                "dgram",
+                "react",
+                "server",
+                "udp"
+            ],
+            "abandoned": "react/datagram",
+            "time": "2014-06-13 21:11:41"
+        },
+        {
+            "name": "clue/icmp-react",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-icmp-react.git",
+                "reference": "dc1eca0cd5874564cb6a7538d63ba0abd12b0bf4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-icmp-react/zipball/dc1eca0cd5874564cb6a7538d63ba0abd12b0bf4",
+                "reference": "dc1eca0cd5874564cb6a7538d63ba0abd12b0bf4",
+                "shasum": ""
+            },
+            "require": {
+                "clue/socket-react": "0.2.*",
+                "e-butik/iodophor": "1.*",
+                "php": ">=5.3",
+                "react/event-loop": "0.3.*",
+                "react/promise": "~1.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Clue\\React\\Icmp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Simple async lowlevel ICMP (ping) messages for react",
+            "homepage": "https://github.com/clue/php-icmp-react",
+            "keywords": [
+                "Socket",
+                "async",
+                "diagnose",
+                "echo request",
+                "icmp",
+                "network",
+                "ping",
+                "reactphp"
+            ],
+            "time": "2014-07-21 19:18:40"
+        },
+        {
+            "name": "clue/socket-raw",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-socket-raw.git",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-socket-raw/zipball/8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-sockets": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Socket\\Raw\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Simple and lightweight OOP wrapper for PHP's low level sockets extension (ext-sockets)",
+            "homepage": "https://github.com/clue/php-socket-raw",
+            "keywords": [
+                "Socket",
+                "client",
+                "datagram",
+                "dgram",
+                "icmp",
+                "ipv6",
+                "server",
+                "stream",
+                "tcp",
+                "udg",
+                "udp",
+                "unix"
+            ],
+            "time": "2015-03-18 23:48:01"
+        },
+        {
+            "name": "clue/socket-react",
+            "version": "v0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/reactphp-socket.git",
+                "reference": "30b03a057cb00b030f2c15d6898dd55b81f97622"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/reactphp-socket/zipball/30b03a057cb00b030f2c15d6898dd55b81f97622",
+                "reference": "30b03a057cb00b030f2c15d6898dd55b81f97622",
+                "shasum": ""
+            },
+            "require": {
+                "clue/datagram": "0.4.*",
+                "clue/socket-raw": "1.* | 0.1.*",
+                "evenement/evenement": "1.*",
+                "react/event-loop": ">=0.2, <0.4",
+                "react/promise": "1.*",
+                "react/socket": ">=0.2, <0.4",
+                "react/stream": ">=0.2, <0.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Socket\\React\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Binding for raw sockets (ext-sockets) in reactphp",
+            "homepage": "https://github.com/clue/socket-react",
+            "keywords": [
+                "async",
+                "ext-sockets",
+                "low-level",
+                "react",
+                "sockets"
+            ],
+            "time": "2014-05-10 14:50:10"
+        },
+        {
+            "name": "e-butik/iodophor",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/e-butik/Iodophor.git",
+                "reference": "7dd36ab2395e828760bdd33859b42472d5c129b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/e-butik/Iodophor/zipball/7dd36ab2395e828760bdd33859b42472d5c129b7",
+                "reference": "7dd36ab2395e828760bdd33859b42472d5c129b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Iodophor": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3"
+            ],
+            "description": "A PHP library for binary IO and bit twiddling",
+            "homepage": "http://github.com/e-butik/Iodophor",
+            "time": "2012-04-11 07:16:06"
+        },
+        {
+            "name": "evenement/evenement",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/igorw/evenement.git",
+                "reference": "fa966683e7df3e5dd5929d984a44abfbd6bafe8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/igorw/evenement/zipball/fa966683e7df3e5dd5929d984a44abfbd6bafe8d",
+                "reference": "fa966683e7df3e5dd5929d984a44abfbd6bafe8d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Evenement": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Igor Wiedler",
+                    "email": "igor@wiedler.ch",
+                    "homepage": "http://wiedler.ch/igor/"
+                }
+            ],
+            "description": "Événement is a very simple event dispatching library for PHP 5.3",
+            "keywords": [
+                "event-dispatcher"
+            ],
+            "time": "2012-05-30 15:01:08"
+        },
         {
             "name": "phpmailer/phpmailer",
             "version": "v5.2.14",
@@ -66,6 +335,263 @@
             ],
             "description": "PHPMailer is a full-featured email creation and transfer class for PHP",
             "time": "2015-11-01 10:15:28"
+        },
+        {
+            "name": "react/cache",
+            "version": "v0.3.2",
+            "target-dir": "React/Cache",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/cache.git",
+                "reference": "437357102effb562b44dbc0ac4eb2c209c4f572b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/cache/zipball/437357102effb562b44dbc0ac4eb2c209c4f572b",
+                "reference": "437357102effb562b44dbc0ac4eb2c209c4f572b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "react/promise": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\Cache": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Async caching.",
+            "keywords": [
+                "cache"
+            ],
+            "time": "2013-04-24 08:33:43"
+        },
+        {
+            "name": "react/dns",
+            "version": "v0.3.2",
+            "target-dir": "React/Dns",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/dns.git",
+                "reference": "518e12e12f0a86e63ba482ebd728408391cc883f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/dns/zipball/518e12e12f0a86e63ba482ebd728408391cc883f",
+                "reference": "518e12e12f0a86e63ba482ebd728408391cc883f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "react/cache": "0.3.*",
+                "react/promise": "~1.0",
+                "react/socket": "0.3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\Dns": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Async DNS resolver.",
+            "keywords": [
+                "dns",
+                "dns-resolver"
+            ],
+            "time": "2013-04-27 08:57:30"
+        },
+        {
+            "name": "react/event-loop",
+            "version": "v0.3.4",
+            "target-dir": "React/EventLoop",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/event-loop.git",
+                "reference": "235cddfa999a392e7d63dc9bef2e042492608d9f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/event-loop/zipball/235cddfa999a392e7d63dc9bef2e042492608d9f",
+                "reference": "235cddfa999a392e7d63dc9bef2e042492608d9f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-libev": "*",
+                "ext-libevent": ">=0.0.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\EventLoop": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Event loop abstraction layer that libraries can use for evented I/O.",
+            "keywords": [
+                "event-loop"
+            ],
+            "time": "2013-07-21 02:23:09"
+        },
+        {
+            "name": "react/promise",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/promise.git",
+                "reference": "d76a033b5f4441bfd414a8c4421ccabfa756e110"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/d76a033b5f4441bfd414a8c4421ccabfa756e110",
+                "reference": "d76a033b5f4441bfd414a8c4421ccabfa756e110",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\Promise": "src/"
+                },
+                "files": [
+                    "src/React/Promise/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jan Sorgalla",
+                    "email": "jsorgalla@gmail.com"
+                }
+            ],
+            "description": "A lightweight implementation of CommonJS Promises/A for PHP",
+            "time": "2015-07-01 14:42:26"
+        },
+        {
+            "name": "react/socket",
+            "version": "v0.3.4",
+            "target-dir": "React/Socket",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/socket.git",
+                "reference": "19bc0c4309243717396022ffb2e59be1cc784327"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/socket/zipball/19bc0c4309243717396022ffb2e59be1cc784327",
+                "reference": "19bc0c4309243717396022ffb2e59be1cc784327",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "1.0.*",
+                "php": ">=5.3.3",
+                "react/event-loop": "0.3.*",
+                "react/stream": "0.3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\Socket": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Library for building an evented socket server.",
+            "keywords": [
+                "Socket"
+            ],
+            "time": "2014-02-17 22:32:00"
+        },
+        {
+            "name": "react/stream",
+            "version": "v0.3.4",
+            "target-dir": "React/Stream",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactphp/stream.git",
+                "reference": "feef56628afe3fa861f0da5f92c909e029efceac"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactphp/stream/zipball/feef56628afe3fa861f0da5f92c909e029efceac",
+                "reference": "feef56628afe3fa861f0da5f92c909e029efceac",
+                "shasum": ""
+            },
+            "require": {
+                "evenement/evenement": "1.0.*",
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "react/event-loop": "0.3.*",
+                "react/promise": "~1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "React\\Stream": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Basic readable and writable stream interfaces that support piping.",
+            "keywords": [
+                "pipe",
+                "stream"
+            ],
+            "time": "2014-02-16 19:48:52"
         }
     ],
     "packages-dev": [],
