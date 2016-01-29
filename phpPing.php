@@ -1,14 +1,14 @@
 <?php
 
 $configfile = __DIR__ .'/config.php';
-if (!file_exists($configfile)) die('config.php not found; copy config.sample.php to config.php and change as needed');
+if (!file_exists($configfile)) die('config.php not found; copy config.sample.php to config.php and change as needed' . PHP_EOL);
 
 include_once __DIR__ .'/vendor/autoload.php';
 include_once __DIR__ .'/config.php';
 
 $config = new phpPingConfig;
 for ($i=1; $i<count($_SERVER['argv']); $i++) $config->targets[] = $_SERVER['argv'][$i];
-if (empty($config->targets)) die('no targets specified');
+if (empty($config->targets)) die('no targets specified' . PHP_EOL);
 
 $statuses = array();
 
