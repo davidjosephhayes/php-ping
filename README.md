@@ -17,5 +17,15 @@ Copy config.sample.php to config.php. Change variables as necessary.
 Install a cron tab. For example, I want to run it twice an hour. The php comman can be replaces by the output of which php (something like `/usr/bin/php`).
 
 ```
-0,30 * * * * php patch/to/phpPing.php
+0,30 * * * * php path/to/phpPing.php
 ```
+
+of if you want to specify at run time, domains can be added as arguements. e.g.
+
+```
+php path/to/phpPing.php example.com example.org
+```
+
+## Good to know 
+
+This script uses ICMP sockets which require root access on unix/linux systems.
